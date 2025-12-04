@@ -1,5 +1,5 @@
-/* FruitSeeker service worker v6 */
-const CACHE_NAME="fruitseeker-v6";
+/* FruitSeeker service worker v7 */
+const CACHE_NAME="fruitseeker-v7";
 const ASSETS=["./","./index.html","./manifest.webmanifest","./assets/icon-192.png","./assets/icon-512.png","./js/app.js","./js/db.js","./js/csv.js"];
 self.addEventListener("install",e=>{e.waitUntil((async()=>{const c=await caches.open(CACHE_NAME);await c.addAll(ASSETS);self.skipWaiting();})())});
 self.addEventListener("activate",e=>{e.waitUntil((async()=>{const ks=await caches.keys();await Promise.all(ks.map(k=>k!==CACHE_NAME?caches.delete(k):Promise.resolve()));self.clients.claim();})())});

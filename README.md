@@ -1,1 +1,1 @@
-FruitSeeker v5 — UI mejorada y etiqueta 'Precio'.
+FruitSeeker v7 — deduplicación al guardar (por Part number/EAN) y en resultados.

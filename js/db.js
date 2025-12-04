@@ -1,5 +1,5 @@
 const DB_NAME="fruitseeker_db";
-const DB_VERSION=6;
+const DB_VERSION=7;
 const STORE_PRODUCTS="products";
 const STORE_META="meta";
 function openDB(){return new Promise((resolve,reject)=>{const req=indexedDB.open(DB_NAME,DB_VERSION);req.onupgradeneeded=e=>{const db=req.result;if(!db.objectStoreNames.contains(STORE_PRODUCTS)){const s=db.createObjectStore(STORE_PRODUCTS,{keyPath:"id",autoIncrement:true});s.createIndex("partNumber","partNumber",{unique:false});s.createIndex("ean","ean",{unique:false});}
